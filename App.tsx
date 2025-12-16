@@ -18,7 +18,7 @@ function App() {
   }, [isDarkMode]);
 
   const renderContent = () => {
-    switch(activeTab) {
+    switch (activeTab) {
       case 'analysis': return <AnalysisView />;
       case 'document': return <DocumentViewer />;
       case 'infographics': return <InfographicsView />;
@@ -40,45 +40,42 @@ function App() {
               <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Ley de Modernización Laboral</p>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <nav className="flex items-center bg-slate-100 dark:bg-slate-800 p-1.5 rounded-xl border border-transparent dark:border-slate-700">
               <button
                 onClick={() => setActiveTab('analysis')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
-                  activeTab === 'analysis' 
-                    ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-blue-400 shadow-sm' 
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${activeTab === 'analysis'
+                    ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-blue-400 shadow-sm'
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
-                }`}
+                  }`}
               >
                 <LayoutDashboard className="w-4 h-4" />
                 Análisis
               </button>
               <button
                 onClick={() => setActiveTab('infographics')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
-                  activeTab === 'infographics' 
-                    ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-blue-400 shadow-sm' 
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${activeTab === 'infographics'
+                    ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-blue-400 shadow-sm'
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
-                }`}
+                  }`}
               >
                 <ImageIcon className="w-4 h-4" />
                 Infografías
               </button>
               <button
                 onClick={() => setActiveTab('document')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
-                  activeTab === 'document' 
-                    ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-blue-400 shadow-sm' 
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${activeTab === 'document'
+                    ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-blue-400 shadow-sm'
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
-                }`}
+                  }`}
               >
                 <FileText className="w-4 h-4" />
                 Documento
               </button>
             </nav>
 
-            <button 
+            <button
               onClick={() => setIsDarkMode(!isDarkMode)}
               className="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
               aria-label="Toggle Dark Mode"
@@ -100,7 +97,7 @@ function App() {
             <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Ley de Modernización</p>
           </div>
         </div>
-        <button 
+        <button
           onClick={() => setIsDarkMode(!isDarkMode)}
           className="p-2 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
         >
@@ -110,7 +107,7 @@ function App() {
 
       {/* Main Content */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-        
+
         {/* Intro Section */}
         {activeTab === 'analysis' && (
           <div className="bg-white dark:bg-slate-900 border border-blue-100 dark:border-blue-900/30 rounded-2xl p-6 mb-8 shadow-sm relative overflow-hidden transition-colors">
@@ -118,7 +115,7 @@ function App() {
             <div className="relative z-10">
               <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Análisis de Impacto</h2>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-3xl">
-                Esta herramienta interactiva contrasta los puntos clave del nuevo proyecto de ley con la legislación vigente. 
+                Esta herramienta interactiva contrasta los puntos clave del nuevo proyecto de ley con la legislación vigente.
                 Utiliza las tarjetas a continuación para entender qué cambia, qué derechos se modifican y cómo impacta en tu futuro laboral.
               </p>
             </div>
@@ -136,19 +133,17 @@ function App() {
         <div className="flex justify-around items-center h-16">
           <button
             onClick={() => setActiveTab('analysis')}
-            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${
-              activeTab === 'analysis' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
-            }`}
+            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${activeTab === 'analysis' ? 'text-blue-600 dark:text-blue-300' : 'text-slate-500 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-100'
+              }`}
           >
             <LayoutDashboard className={`w-6 h-6 ${activeTab === 'analysis' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'analysis' ? 2 : 2} />
             <span className="text-[10px] font-medium">Análisis</span>
           </button>
-          
+
           <button
             onClick={() => setActiveTab('infographics')}
-            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${
-              activeTab === 'infographics' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
-            }`}
+            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${activeTab === 'infographics' ? 'text-blue-600 dark:text-blue-300' : 'text-slate-500 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-100'
+              }`}
           >
             <ImageIcon className={`w-6 h-6 ${activeTab === 'infographics' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'infographics' ? 2 : 2} />
             <span className="text-[10px] font-medium">Infografías</span>
@@ -156,9 +151,8 @@ function App() {
 
           <button
             onClick={() => setActiveTab('document')}
-            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${
-              activeTab === 'document' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
-            }`}
+            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${activeTab === 'document' ? 'text-blue-600 dark:text-blue-300' : 'text-slate-500 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-100'
+              }`}
           >
             <FileText className={`w-6 h-6 ${activeTab === 'document' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'document' ? 2 : 2} />
             <span className="text-[10px] font-medium">Documento</span>
