@@ -72,16 +72,16 @@ export const summaryInfographics: Infographic[] = [
     description: 'Resumen gráfico de los principales retrocesos en derechos laborales.'
   },
   {
-    id: 'sum-3',
-    title: 'Solidaridad y Prueba',
-    src: '/infographics/summary-3.jpg',
-    description: 'Impacto en responsabilidad solidaria y cambios en el período de prueba.'
-  },
-  {
     id: 'sum-4',
     title: 'Balance General',
     src: '/infographics/summary-4.jpg',
     description: 'Comparativa de protección vs precarización entre la ley actual y la reforma.'
+  },
+  {
+    id: 'sum-3',
+    title: 'Solidaridad y Prueba',
+    src: '/infographics/summary-3.jpg',
+    description: 'Impacto en responsabilidad solidaria y cambios en el período de prueba.'
   }
 ];
 
