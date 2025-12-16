@@ -130,8 +130,11 @@ const Carousel: React.FC<CarouselProps> = ({ items, id }) => {
           </div>
 
           <button
-            className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors z-50 p-2"
-            onClick={() => setIsZoomed(false)}
+            className="absolute top-4 right-4 text-white hover:text-white transition-colors z-[200] p-2 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsZoomed(false);
+            }}
           >
             <X className="w-8 h-8" />
           </button>
