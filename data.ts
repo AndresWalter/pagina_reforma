@@ -66,16 +66,22 @@ export const infographics: Infographic[] = [
 
 export const summaryInfographics: Infographic[] = [
   {
-    id: 'sum-1',
-    title: 'Modernización o Retroceso',
-    src: '/infographics/summary-new-1.jpg',
-    description: 'Comparativa visual del impacto general de la reforma en la relación laboral.'
-  },
-  {
     id: 'sum-2',
     title: 'Un Paso Atrás',
     src: '/infographics/summary-new-2.png',
     description: 'Resumen gráfico de los principales retrocesos en derechos laborales.'
+  },
+  {
+    id: 'sum-3',
+    title: 'Solidaridad y Prueba',
+    src: '/infographics/summary-3.jpg',
+    description: 'Impacto en responsabilidad solidaria y cambios en el período de prueba.'
+  },
+  {
+    id: 'sum-4',
+    title: 'Balance General',
+    src: '/infographics/summary-4.jpg',
+    description: 'Comparativa de protección vs precarización entre la ley actual y la reforma.'
   }
 ];
 
