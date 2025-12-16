@@ -69,12 +69,12 @@ const Carousel: React.FC<CarouselProps> = ({ items, id }) => {
           </button>
 
           {/* Indicators */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 p-2 rounded-full bg-white/20 backdrop-blur-[2px]">
             {items.map((_, index) => (
               <button
                 key={index}
                 onClick={(e) => { e.stopPropagation(); setCurrentIndex(index); }}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex ? 'bg-white w-6' : 'bg-white/50 hover:bg-white/80'
+                className={`w-2.5 h-2.5 rounded-full transition-all shadow-sm ${index === currentIndex ? 'bg-slate-900 w-6' : 'bg-slate-600/80 hover:bg-slate-800'
                   }`}
               />
             ))}
@@ -101,13 +101,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, id }) => {
           className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
           onClick={() => setIsZoomed(false)}
         >
-          <button
-            className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
-            onClick={() => setIsZoomed(false)}
-          >
-            <X className="w-8 h-8" />
-          </button>
-
           <div className="relative w-full max-w-7xl h-full max-h-screen flex flex-col items-center justify-center" onClick={e => e.stopPropagation()}>
             <img
               src={items[currentIndex].src}
@@ -135,6 +128,13 @@ const Carousel: React.FC<CarouselProps> = ({ items, id }) => {
               <ChevronRight className="w-10 h-10" />
             </button>
           </div>
+
+          <button
+            className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors z-50 p-2"
+            onClick={() => setIsZoomed(false)}
+          >
+            <X className="w-8 h-8" />
+          </button>
         </div>
       )}
     </>
