@@ -85,6 +85,85 @@ export const summaryInfographics: Infographic[] = [
   }
 ];
 
+export const glaciaresInfographics: Infographic[] = [
+  {
+    id: 'glac-5',
+    title: '¿Reserva o Inversión?',
+    src: '/glaciares/slide-5.jpg',
+    description: 'Glaciares argentinos: la tensión entre conservación y explotación.'
+  },
+  {
+    id: 'glac-1',
+    title: 'Reserva de Agua',
+    src: '/glaciares/slide-1.jpg',
+    description: 'Los glaciares como recurso estratégico y reserva de agua dulce.'
+  },
+  {
+    id: 'glac-2',
+    title: 'Reforma de Ley',
+    src: '/glaciares/slide-2.jpg',
+    description: 'Propuesta de modificación de la Ley de Glaciares.'
+  },
+  {
+    id: 'glac-3',
+    title: 'Visiones del Futuro',
+    src: '/glaciares/slide-3.jpg',
+    description: 'Contraste entre protección ambiental y desarrollo económico.'
+  },
+  {
+    id: 'glac-4',
+    title: 'Ambiente Periglacial',
+    src: '/glaciares/slide-4.jpg',
+    description: 'El debate sobre la protección del ambiente periglacial.'
+  },
+  {
+    id: 'glac-6',
+    title: 'Actividades Prohibidas',
+    src: '/glaciares/slide-6.jpg',
+    description: 'El Impacto Práctico: ¿Qué Actividades se Prohíben?'
+  },
+  {
+    id: 'glac-7',
+    title: 'Inventario Nacional',
+    src: '/glaciares/slide-7.jpg',
+    description: 'El Inventario Nacional: La Herramienta que Define los Límites.'
+  },
+  {
+    id: 'glac-8',
+    title: 'Argumento del Gobierno',
+    src: '/glaciares/slide-8.jpg',
+    description: 'Previsibilidad para Destrabar la Inversión.'
+  },
+  {
+    id: 'glac-9',
+    title: 'Alerta Científica',
+    src: '/glaciares/slide-9.jpg',
+    description: 'La Alerta Científica y Ambiental: La Integridad de las Reservas Hídricas.'
+  },
+  {
+    id: 'glac-10',
+    title: 'Futuros Posibles',
+    src: '/glaciares/slide-10.jpg',
+    description: 'En Balanza: Protección Hídrica vs Desarrollo Económico.'
+  }
+];
+
+export const glaciaresSummary: Infographic[] = [
+
+  {
+    id: 'glac-sum-2',
+    title: 'Agua o Minería',
+    src: '/glaciares/resumen-2.jpg',
+    description: 'Infografía detallada sobre el impacto de la reforma en la protección de glaciares.'
+  },
+  {
+    id: 'glac-sum-3',
+    title: 'Impacto de la Reforma',
+    src: '/glaciares/resumen-final.jpg',
+    description: 'Análisis detallado: ¿Protección del Agua o Vía Libre a la Minería?'
+  }
+];
+
 export const analysisPoints: AnalysisPoint[] = [
   {
     id: '1',

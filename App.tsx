@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { LayoutDashboard, FileText, Scale, Image as ImageIcon, Sun, Moon } from 'lucide-react';
+import { LayoutDashboard, FileText, Scale, Image as ImageIcon, Sun, Moon, Mountain } from 'lucide-react';
 import DocumentViewer from './components/DocumentViewer';
 import AnalysisView from './components/AnalysisView';
 import InfographicsView from './components/InfographicsView';
+import GlaciaresView from './components/GlaciaresView';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'analysis' | 'document' | 'infographics'>('analysis');
+  const [activeTab, setActiveTab] = useState<'analysis' | 'document' | 'infographics' | 'glaciares'>('analysis');
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   // Apply dark mode class to html element
@@ -22,6 +23,7 @@ function App() {
       case 'analysis': return <AnalysisView />;
       case 'document': return <DocumentViewer />;
       case 'infographics': return <InfographicsView />;
+      case 'glaciares': return <GlaciaresView />;
       default: return <AnalysisView />;
     }
   };
@@ -82,6 +84,17 @@ function App() {
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
+
+            <button
+              onClick={() => setActiveTab('glaciares')}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all border ${activeTab === 'glaciares'
+                ? 'bg-cyan-50 dark:bg-cyan-600 text-cyan-700 dark:text-white border-cyan-200 dark:border-cyan-500 shadow-lg shadow-cyan-900/20'
+                : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-cyan-300 dark:hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-300'
+                }`}
+            >
+              <Mountain className="w-4 h-4" />
+              Ley de Glaciares
+            </button>
           </div>
         </div>
       </header>
@@ -138,6 +151,15 @@ function App() {
           >
             <LayoutDashboard className={`w-6 h-6 ${activeTab === 'analysis' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'analysis' ? 2 : 2} />
             <span className="text-[10px] font-medium">Análisis</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('glaciares')}
+            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${activeTab === 'glaciares' ? 'text-cyan-600 dark:text-cyan-300' : 'text-slate-500 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-100'
+              }`}
+          >
+            <Mountain className={`w-6 h-6 ${activeTab === 'glaciares' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'glaciares' ? 2 : 2} />
+            <span className="text-[10px] font-medium">Glaciares</span>
           </button>
 
           <button
