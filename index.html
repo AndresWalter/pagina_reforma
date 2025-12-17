@@ -33,7 +33,29 @@
       .font-serif {
         font-family: 'Merriweather', serif;
       }
-      /* Hide scrollbar for clean UI */
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 14px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #0f172a; /* slate-900 */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #475569; /* slate-600 */
+        border-radius: 7px;
+        border: 3px solid #0f172a;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #64748b; /* slate-500 */
+      }
+
+      /* Adjust for light mode via body class if needed, but defaults are good */
+      
+      /* Hide scrollbar for clean UI utilities */
       .scrollbar-hide::-webkit-scrollbar {
           display: none;
       }
