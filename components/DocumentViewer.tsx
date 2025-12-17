@@ -173,6 +173,10 @@ const DocumentViewer: React.FC = () => {
           </div>
         )}
       </div>
+
+      <p className="text-xs text-slate-400 text-center mt-8 mb-4">
+        Disclaimer: This content was generated using AI. While we strive for accuracy, we recommend that readers verify important information.
+      </p>
     </div>
   );
 };
