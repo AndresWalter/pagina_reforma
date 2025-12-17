@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Carousel from './Carousel';
 import { glaciaresInfographics, glaciaresSummary } from '../data';
 import { Mountain, Info, BarChart3 } from 'lucide-react';
 
 const GlaciaresView: React.FC = () => {
+    const firstCarouselRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        // Scroll to the first carousel after a brief delay to ensure rendering
+        const timer = setTimeout(() => {
+            firstCarouselRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div className="space-y-16 animate-fadeIn pb-12">
             {/* Introduction */}
@@ -17,7 +28,7 @@ const GlaciaresView: React.FC = () => {
                 </div>
             </div>
 
-            <section>
+            <section ref={firstCarouselRef}>
                 <div className="flex items-center gap-3 mb-6 px-4 md:px-0">
                     <span className="w-1.5 h-8 bg-cyan-600 rounded-full"></span>
                     <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Glaciares Argentinos</h2>
