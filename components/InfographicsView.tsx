@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { infographics, summaryInfographics } from '../data';
 import { ChevronLeft, ChevronRight, Info, ZoomIn, X } from 'lucide-react';
 import { Infographic } from '../types';
@@ -187,6 +187,17 @@ const Carousel: React.FC<CarouselProps> = ({ items, id }) => {
 };
 
 const InfographicsView: React.FC = () => {
+  const firstCarouselRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    // Scroll to the first carousel after a brief delay to ensure rendering
+    const timer = setTimeout(() => {
+      firstCarouselRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="space-y-16 animate-fadeIn pb-12">
       {/* Introduction */}
@@ -201,7 +212,7 @@ const InfographicsView: React.FC = () => {
       </div>
 
       {/* Detailed Carousel (Now First) */}
-      <section>
+      <section ref={firstCarouselRef}>
         <div className="flex items-center gap-3 mb-6 px-4 md:px-0">
           <span className="w-1.5 h-8 bg-blue-600 rounded-full"></span>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Análisis Detallado</h2>
