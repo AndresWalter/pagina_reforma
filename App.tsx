@@ -153,14 +153,7 @@ function App() {
             <span className="text-[10px] font-medium">Análisis</span>
           </button>
 
-          <button
-            onClick={() => setActiveTab('glaciares')}
-            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${activeTab === 'glaciares' ? 'text-cyan-600 dark:text-cyan-300' : 'text-slate-500 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-100'
-              }`}
-          >
-            <Mountain className={`w-6 h-6 ${activeTab === 'glaciares' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'glaciares' ? 2 : 2} />
-            <span className="text-[10px] font-medium">Glaciares</span>
-          </button>
+
 
           <button
             onClick={() => setActiveTab('infographics')}
@@ -178,6 +171,15 @@ function App() {
           >
             <FileText className={`w-6 h-6 ${activeTab === 'document' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'document' ? 2 : 2} />
             <span className="text-[10px] font-medium">Documento</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('glaciares')}
+            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${activeTab === 'glaciares' ? 'text-cyan-600 dark:text-cyan-300' : 'text-slate-500 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-100'
+              }`}
+          >
+            <Mountain className={`w-6 h-6 ${activeTab === 'glaciares' ? 'fill-current' : ''}`} strokeWidth={activeTab === 'glaciares' ? 2 : 2} />
+            <span className="text-[10px] font-medium">Glaciares</span>
           </button>
         </div>
       </nav>
